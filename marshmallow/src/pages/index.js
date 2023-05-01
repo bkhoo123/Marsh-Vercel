@@ -54,7 +54,7 @@ export default function Home() {
           <div className="mt-10 md:mt-20 w-full max-w-md sm:w-[80%]">
             <form
               onSubmit={handleSubmit}
-              className="grid grid-cols-1 gap-5"
+              className="grid grid-cols-1 gap-5 sm:grid-flow-col"
             >
               <label className="flex flex-col gap-y-2">
                 <input
