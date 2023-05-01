@@ -41,7 +41,7 @@ export default function Home() {
     <div style={{backgroundColor: "#4872B1"}} className="min-h-screen overflow-y-auto flex justify-center items-center p-4 sm:p-12">
       <main>
         <div className="flex flex-col items-center">
-          <div className="w-1/2 sm:w-[90%]">
+          <div className="w-1/2 sm:w-[80%]">
             <Image src={Logo} height={200} width={409} />
           </div>
 
@@ -51,7 +51,7 @@ export default function Home() {
             The marshmallow roasting card game
           </div>
 
-          <div className="mt-10 md:mt-20 w-full max-w-md">
+          <div className="mt-10 md:mt-20 w-full max-w-md sm:w-[80%]">
             <form
               onSubmit={handleSubmit}
               className="grid grid-cols-1 gap-5"
