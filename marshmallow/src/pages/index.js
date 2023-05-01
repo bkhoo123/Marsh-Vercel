@@ -38,10 +38,10 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen overflow-y-auto flex justify-center items-center p-4 md:p-12 bg-cyan-500">
+    <div style={{backgroundColor: "#4872B1"}} className="min-h-screen overflow-y-auto flex justify-center items-center p-4 md:p-12">
       <main>
         <div className="flex flex-col items-center">
-          <div className="w-1/2 md:w-auto">
+          <div className="w-1/2 md:w-[90%]">
             <Image src={Logo} height={200} width={409} />
           </div>
 
