@@ -26,13 +26,14 @@ export default function Home() {
     e.preventDefault()
 
     const post = await axios.post(`/api/NotionForm`, form)
-    if (post) alert("Successfully Submitted")
 
-    setForm({
+    await setForm({
       firstName: '',
       lastName: '',
       email: ''
     })
+
+    if (post) alert("Successfully Submitted")
     
   }
 
