@@ -38,7 +38,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen overflow-y-auto flex justify-center items-center p-12 sm:px-10 sm:w-10/12" style={{backgroundColor: "#4872B1"}}> 
+    <div className="min-h-screen overflow-y-auto flex justify-center items-center p-12 sm:max-xl-px-10" style={{backgroundColor: "#4872B1"}}> 
       <main style={{backgroundColor:"#4872B1"}}>
 
         <div className="my-15 flex justify-items-center flex-col items-center">
@@ -47,7 +47,6 @@ export default function Home() {
           src={Logo}
           height={400}
           width={818}
-          className="object-contain"
           />
           </div>
 
