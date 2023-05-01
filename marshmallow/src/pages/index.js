@@ -38,74 +38,67 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen overflow-y-auto flex justify-center items-center p-12" style={{backgroundColor: "#4872B1"}}> 
-      <main style={{backgroundColor:"#4872B1"}}>
-
-        <div className="my-15 flex justify-items-center flex-col items-center">
+    <div className="min-h-screen overflow-y-auto flex justify-center items-center p-4 md:p-12 bg-blue-700">
+      <main>
+        <div className="flex flex-col items-center">
           <div>
-          <Image
-          src={Logo}
-          height={400}
-          width={818}
-          />
+            <Image src={Logo} height={400} width={818} />
           </div>
 
-          <div className="game-title">
-            Marshmallow Party
-          </div>
+          <div className="game-title">Marshmallow Party</div>
 
-          <div className="text-white text-4xl ">
+          <div className="text-white text-2xl md:text-4xl">
             The marshmallow roasting card game
           </div>
 
-          <div className="mt-20">
-          <form onSubmit={handleSubmit} className="grid grid-cols-2 justify-center items-center mx-auto gap-5">
-            <label className='col-span-1 flex gap-x-4 flex-col'>
-              <input 
-              className="border-2 border-black-400 p-2 rounded-md" 
-              type="text" 
-              placeholder='First Name'
-              required
-              name="firstName"
-              onChange={handleChange}
-              />
-            
-            </label>
+          <div className="mt-10 md:mt-20 w-full max-w-md">
+            <form
+              onSubmit={handleSubmit}
+              className="grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-5"
+            >
+              <label className="flex flex-col gap-y-2">
+                <input
+                  className="border-2 border-black-400 p-2 rounded-md"
+                  type="text"
+                  placeholder="First Name"
+                  required
+                  name="firstName"
+                  onChange={handleChange}
+                />
+              </label>
 
-            <label className="col-span-1 flex flex-col gap-x-4">
-              
-              <input 
-              className="border-2 border-black-400 p-2 rounded-md" 
-              type="text" 
-              placeholder="Last Name"
-              name="lastName"
-              required
-              onChange={handleChange}
-              />
-            
-            </label>
+              <label className="flex flex-col gap-y-2">
+                <input
+                  className="border-2 border-black-400 p-2 rounded-md"
+                  type="text"
+                  placeholder="Last Name"
+                  name="lastName"
+                  required
+                  onChange={handleChange}
+                />
+              </label>
 
-            <label className="col-span-2">
-              <input 
-              className="border-2 border-black-400 p-2 rounded-md w-full" 
-              type="email" 
-              placeholder="Email Address"
-              required
-              name="email"
-              onChange={handleChange}
-              />
-            </label>
+              <label className="col-span-2">
+                <input
+                  className="border-2 border-black-400 p-2 rounded-md w-full"
+                  type="email"
+                  placeholder="Email Address"
+                  required
+                  name="email"
+                  onChange={handleChange}
+                />
+              </label>
 
-            <button type="submit" className=" col-span-2 text-white p-2 rounded-md ml-15 bg-cyan-500 hover:bg-stone-400">Subscribe</button>
-
-          </form>
+              <button
+                type="submit"
+                className="col-span-2 text-white p-2 rounded-md mt-4 md:mt-0 md:ml-15 bg-cyan-500 hover:bg-stone-400"
+              >
+                Subscribe
+              </button>
+            </form>
           </div>
-
         </div>
-
-       
-
       </main>
     </div>
-  )
+  );
 }
