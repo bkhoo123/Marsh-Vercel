@@ -38,23 +38,23 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen overflow-y-auto flex justify-center items-center p-4 md:p-12 bg-blue-700">
+    <div className="min-h-screen overflow-y-auto flex justify-center items-center p-4 md:p-12 bg-cyan-500">
       <main>
         <div className="flex flex-col items-center">
-          <div>
-            <Image src={Logo} height={400} width={818} />
+          <div className="w-1/2 md:w-auto">
+            <Image src={Logo} height={200} width={409} />
           </div>
 
           <div className="game-title">Marshmallow Party</div>
 
-          <div className="text-white text-2xl md:text-4xl">
+          <div className="text-white text-xl md:text-4xl">
             The marshmallow roasting card game
           </div>
 
           <div className="mt-10 md:mt-20 w-full max-w-md">
             <form
               onSubmit={handleSubmit}
-              className="grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-5"
+              className="grid grid-cols-1 gap-5"
             >
               <label className="flex flex-col gap-y-2">
                 <input
@@ -91,7 +91,7 @@ export default function Home() {
 
               <button
                 type="submit"
-                className="col-span-2 text-white p-2 rounded-md mt-4 md:mt-0 md:ml-15 bg-cyan-500 hover:bg-stone-400"
+                className="col-span-2 text-white p-2 rounded-md mt-4 md:mt-0 bg-cyan-500 hover:bg-stone-400 w-full"
               >
                 Subscribe
               </button>
