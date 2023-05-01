@@ -95,7 +95,7 @@ export default function Home() {
               />
             </label>
 
-            <button type="submit" style={{backgroundColor: "#50BAF2"}} className=" col-span-2 text-white p-2 rounded-md ml-15 hover:bg-stone-400">Subscribe</button>
+            <button type="submit" className=" col-span-2 text-white p-2 rounded-md ml-15 bg-cyan-500 hover:bg-stone-400">Subscribe</button>
 
           </form>
           </div>
