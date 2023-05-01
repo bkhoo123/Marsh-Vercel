@@ -38,16 +38,16 @@ export default function Home() {
   }
 
   return (
-    <div style={{backgroundColor: "#4872B1"}} className="min-h-screen overflow-y-auto flex justify-center items-center p-4 md:p-12">
+    <div style={{backgroundColor: "#4872B1"}} className="min-h-screen overflow-y-auto flex justify-center items-center p-4 sm:p-12">
       <main>
         <div className="flex flex-col items-center">
-          <div className="w-1/2 md:w-[90%]">
+          <div className="w-1/2 sm:w-[90%]">
             <Image src={Logo} height={200} width={409} />
           </div>
 
           <div className="game-title">Marshmallow Party</div>
 
-          <div className="text-white text-xl md:text-4xl">
+          <div className="text-white text-xl sm:text-4xl">
             The marshmallow roasting card game
           </div>
 
