@@ -4,6 +4,7 @@ import Logo from '../../public/images/logo.png'
 import { useRouter } from 'next/router'
 const inter = Inter({ subsets: ['latin'] })
 import React, {useState} from 'react'
+import axios from 'axios'
 
 export default function Home() {
   const router = useRouter()
@@ -27,18 +28,20 @@ export default function Home() {
 
     const post = await axios.post(`/api/NotionForm`, form)
 
-    await setForm({
-      firstName: '',
-      lastName: '',
-      email: ''
-    })
 
     if (post) alert("Successfully Submitted")
+    if (post) {
+      setForm({
+        firstName: '',
+        lastName: '',
+        email: ''
+      })
+    }
     
   }
 
   return (
-    <div className="min-h-screen overflow-y-auto flex justify-center items-center p-12 sm:max-xl-px-10" style={{backgroundColor: "#4872B1"}}> 
+    <div className="min-h-screen overflow-y-auto flex justify-center items-center p-12 " style={{backgroundColor: "#4872B1"}}> 
       <main style={{backgroundColor:"#4872B1"}}>
 
         <div onClick={() => router.push('/home')} className="absolute top-5 right-5 text-white text-2xl bg-orange-600 flex p-2 rounded-md drop-shadow-dark cursor-pointer hover:bg-stone-500">Login</div>
@@ -49,6 +52,7 @@ export default function Home() {
           src={Logo}
           height={400}
           width={818}
+          
           />
           </div>
 
@@ -56,11 +60,11 @@ export default function Home() {
             Marshmallow Party
           </div>
 
-          <div className="text-white text-4xl ">
+          <div className="text-white text-4xl text-center">
             The marshmallow roasting card game
           </div>
 
-          <div className="mt-20">
+          <div className="mt-12">
           <form onSubmit={handleSubmit} className="grid grid-cols-2 justify-center items-center mx-auto gap-5">
             <label className='col-span-1 flex gap-x-4 flex-col'>
               <input 
@@ -98,14 +102,12 @@ export default function Home() {
               />
             </label>
 
-            <button style={{backgroundColor: "#50BAF2"}} className=" col-span-2 text-white p-2 rounded-md ml-15 hover:bg-stone-400">Subscribe</button>
+            <button type="submit" className="col-span-2 text-white p-2 rounded-md ml-15 bg-cyan-500 hover:bg-stone-400 drop-shadow-dark">Subscribe</button>
 
           </form>
           </div>
 
         </div>
-
-       
 
       </main>
     </div>

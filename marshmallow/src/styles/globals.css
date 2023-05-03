@@ -47,3 +47,14 @@ html, body {
     5px 5px 0 black; 
 }
 
+@media (min-width: 300px) {
+  .game-title {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .game-title {
+    font-size: 5rem;
+  }
+}
