@@ -1,9 +1,8 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import Logo from '../../public/images/logo.png'
-
+import { useRouter } from 'next/router'
 const inter = Inter({ subsets: ['latin'] })
-
 import React, {useState} from 'react'
 
 export default function Home() {
@@ -28,7 +27,7 @@ export default function Home() {
 
     const post = await axios.post(`/api/NotionForm`, form)
 
-    awaitsetForm({
+    await setForm({
       firstName: '',
       lastName: '',
       email: ''
