@@ -26,17 +26,20 @@ export default function Home() {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    const post = await axios.post(`/api/NotionForm`, form)
-
-
-    if (post) alert("Successfully Submitted")
-    if (post) {
-      setForm({
-        firstName: '',
-        lastName: '',
-        email: ''
-      })
-    }
+    axios.post(`/api/NotionForm`, form)
+    .then((response) => {
+      if (response) {
+        alert("Successfully Submitted")
+        setForm({
+          firstName: '',
+          lastName: '',
+          email: ''
+        })
+      }
+    })
+    .catch((error) => {
+      console.error("Error Submitting Form:", error)
+    })
     
   }
 
@@ -72,6 +75,7 @@ export default function Home() {
               type="text" 
               placeholder='First Name'
               required
+              value={form.firstName}
               name="firstName"
               onChange={handleChange}
               />
@@ -85,6 +89,7 @@ export default function Home() {
               type="text" 
               placeholder="Last Name"
               name="lastName"
+              value={form.lastName}
               required
               onChange={handleChange}
               />
@@ -98,6 +103,7 @@ export default function Home() {
               placeholder="Email Address"
               required
               name="email"
+              value={form.email}
               onChange={handleChange}
               />
             </label>
