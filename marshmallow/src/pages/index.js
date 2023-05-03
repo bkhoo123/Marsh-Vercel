@@ -1,12 +1,16 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import Logo from '../../public/images/logo.png'
+import Login from '../../public/images/login.png'
+import { useRouter } from 'next/router'
 
 const inter = Inter({ subsets: ['latin'] })
 
 import React, {useState} from 'react'
 
 export default function Home() {
+  const router = useRouter()
+
   const [form, setForm] = useState({
     firstName: '',
     lastName: '',
@@ -16,6 +20,8 @@ export default function Home() {
   return (
     <div className="min-h-screen overflow-y-auto flex justify-center items-center" style={{backgroundColor: "#4872B1"}}> 
       <main style={{backgroundColor:"#4872B1"}}>
+
+        <div onClick={() => router.push('/home')} className="absolute top-5 right-5 text-white text-2xl bg-orange-600 flex p-2 rounded-md drop-shadow-dark cursor-pointer hover:bg-stone-500">Login</div>
 
         <div className="my-15 flex justify-items-center flex-col items-center">
           <div>
@@ -70,7 +76,7 @@ export default function Home() {
               />
             </label>
 
-            <button style={{backgroundColor: "#50BAF2"}} className=" col-span-2 text-white p-2 rounded-md ml-15 hover:bg-stone-400">Subscribe</button>
+            <button  className=" col-span-2 text-white p-2 rounded-md ml-15 bg-sky-500 hover:bg-stone-500 drop-shadow-dark">Subscribe</button>
 
           </form>
           </div>
