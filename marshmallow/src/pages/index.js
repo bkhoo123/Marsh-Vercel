@@ -1,15 +1,17 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import Logo from '../../public/images/logo.png'
+import Smoke from '../../public/images/smoke.png'
 import { useRouter } from 'next/router'
 const inter = Inter({ subsets: ['latin'] })
 import React, {useState} from 'react'
 import axios from 'axios'
 
 
+
 export default function Home() {
   const router = useRouter()
-  const [modal, setModal] = useState(true)
+  const [modal, setModal] = useState(false)
 
   const [form, setForm] = useState({
     firstName: '',
@@ -31,7 +33,7 @@ export default function Home() {
     axios.post(`/api/NotionForm`, form)
     .then((response) => {
       if (response) {
-        alert("Successfully Submitted")
+        setModal(true)
         setForm({
           firstName: '',
           lastName: '',
@@ -65,14 +67,14 @@ export default function Home() {
             Marshmallow Party
           </div>
 
-          <div className="text-white text-4xl text-center">
+          <div className="text-white text-4xl text-center min-[300px]:max-lg:text-2xl  ">
             The marshmallow roasting card game
           </div>
 
-          <div className={modal ? "absolute z-1 left-[35%] top-[35%] bg-white p-6 h-[20%] w-[20%]" : ''}>
-              Where R You?
-              <div className="border-t-2 mt-8">
-
+          <div className={modal ? "absolute z-1 left-[40%] top-[40%] bg-white p-6 h-auto w-[20%] text-center rounded-md" : 'hidden'}>
+              You have successfully subscribed!
+              <div className="border-t-2 mt-8 text-center">
+                  <button onClick={() => setModal(false)} className="mt-4 p-2 bg-cyan-500 text-white rounded-md">Close</button>
               </div>
           </div>
 
