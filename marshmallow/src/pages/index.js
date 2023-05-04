@@ -6,8 +6,10 @@ const inter = Inter({ subsets: ['latin'] })
 import React, {useState} from 'react'
 import axios from 'axios'
 
+
 export default function Home() {
   const router = useRouter()
+  const [modal, setModal] = useState(true)
 
   const [form, setForm] = useState({
     firstName: '',
@@ -65,6 +67,13 @@ export default function Home() {
 
           <div className="text-white text-4xl text-center">
             The marshmallow roasting card game
+          </div>
+
+          <div className={modal ? "absolute z-1 left-[35%] top-[35%] bg-white p-6 h-[20%] w-[20%]" : ''}>
+              Where R You?
+              <div className="border-t-2 mt-8">
+
+              </div>
           </div>
 
           <div className="mt-12">

@@ -47,7 +47,7 @@ html, body {
     5px 5px 0 black; 
 }
 
-@media (min-width: 300px) {
+@media (min-width: 250px) {
   .game-title {
     font-size: 3.5rem;
   }
@@ -58,3 +58,4 @@ html, body {
     font-size: 5rem;
   }
 }
+
