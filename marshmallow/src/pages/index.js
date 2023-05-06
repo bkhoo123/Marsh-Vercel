@@ -71,7 +71,7 @@ export default function Home() {
             The marshmallow roasting card game
           </div>
 
-          <div className={modal ? "absolute z-1 left-[40%] top-[40%] bg-white p-6 h-auto w-[20%] text-center rounded-md" : 'hidden'}>
+          <div className={modal ? "absolute z-1 left-[40%] top-[40%] bg-white p-6 h-auto w-[20%] text-center rounded-md min-[270px]:max-lg:w-auto min-[270px]:max-lg:left-[5%] min-[270px]:max-lg:mr-5" : 'hidden'}>
               You have successfully subscribed!
               <div className="border-t-2 mt-8 text-center">
                   <button onClick={() => setModal(false)} className="mt-4 p-2 bg-cyan-500 text-white rounded-md">Close</button>
