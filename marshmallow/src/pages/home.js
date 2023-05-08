@@ -25,22 +25,25 @@ export default function Home() {
 
     useEffect(() => {
       if (user) {
-        const check = async () => {
-          const {data} = await axios.get(`/api/user?email=${user?.email}`)
-          // console.log(data)
-    
-          if (!data) {
-            const payload = {
-              email: user?.email,
-              name: user?.name,
-              profile_icon: 0
+        const checkAndCreateUser = async () => {
+          try {
+            const { data } = await axios.get(`/api/user?email=${user?.email}`);
+  
+            if (!data) {
+              const payload = {
+                email: user?.email,
+                name: user?.name,
+                profile_icon: 0,
+              };
+              await axios.post(`/api/user`, payload);
             }
-            await axios.post(`/api/user`, payload)
+          } catch (error) {
+            console.error('Error checking or creating user:', error);
           }
-        }
-        check()
+        };
+        checkAndCreateUser();
       }
-    }, [user])
+    }, [user]);
     
     
 
