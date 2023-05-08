@@ -28,6 +28,7 @@ export default function Home() {
         const checkAndCreateUser = async () => {
           try {
             const { data } = await axios.get(`/api/user?email=${user?.email}`);
+            console.log(data)
   
             if (!data) {
               const payload = {
