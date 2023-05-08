@@ -17,12 +17,13 @@ export default function HomeNav({active}) {
             <Image 
             src={HowtoPlay}
             className="h-[120px] w-[130px]"
+            alt="How to Play"
             />
             <div className={current === "How to Play" ? "text-amber-500 drop-shadow-dark text-center" : 'text-white drop-shadow-dark text-center'}>How to Play</div>
             </div>
 
             <div onClick={() => {active("Cards"); setCurrent("Cards");}} className="flex flex-col gap-4 cursor-pointer hover:scale-105">
-            <Image src={Cards} className="h-[110px] w-[120px]"/>
+            <Image src={Cards} className="h-[110px] w-[120px]" alt="cards"/>
             <div className={current === "Cards" ? "text-amber-500 drop-shadow-dark text-center" : 'text-white drop-shadow-dark text-center'}>Cards</div>
             </div>
 
@@ -30,7 +31,7 @@ export default function HomeNav({active}) {
         </div>
 
             <div onClick={() => {active("Play"); setCurrent("Play");}} className="flex flex-col gap-4 cursor-pointer hover:scale-105">
-                <Image src={Play} className="h-[120px] w-[160px]" />
+                <Image src={Play} className="h-[120px] w-[160px]" alt="play" />
                 <div className={current === "Play" ? "text-amber-500 drop-shadow-dark text-center" : 'text-white drop-shadow-dark text-center'}>Play</div>
             </div>
 
@@ -40,6 +41,7 @@ export default function HomeNav({active}) {
             <Image 
             src={Friends}
             className="h-[120px] w-[160px]"
+            alt="Friends"
             />
             <div className={current === "Friends" ? "text-amber-500 drop-shadow-dark text-center" : 'text-white drop-shadow-dark text-center'}>
                 Friends
@@ -47,7 +49,7 @@ export default function HomeNav({active}) {
             </div>
 
             <div onClick={() => {active("Profile"); setCurrent("Profile");}} className="flex flex-col gap-4 cursor-pointer hover:scale-105">
-            <Image src={Syncrinity} className="h-[120px] w-[160px]" />
+            <Image src={Syncrinity} className="h-[120px] w-[160px]" alt="profile" />
             <div className={current === "Profile" ? "text-amber-500 drop-shadow-dark text-center" : 'text-white drop-shadow-dark text-center'}>Synchrinity</div>
             </div>
         </div>

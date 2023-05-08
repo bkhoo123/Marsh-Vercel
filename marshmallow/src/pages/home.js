@@ -6,8 +6,12 @@ import CardList from '<prefix>/components/CardList'
 import Lobby from '<prefix>/components/Lobby'
 import Friends from '<prefix>/components/Friends'
 import Profile from '<prefix>/components/Profile'
+import axios from 'axios'
+import { useUser } from '@auth0/nextjs-auth0/client';
+
 
 export default function Home() {
+    const { user, error, isLoading } = useUser();
     const router = useRouter()
     const [activeSelection, setActiveSelection] = useState("Play")
 
@@ -18,6 +22,27 @@ export default function Home() {
         "Friends": <Friends />,
         "Profile": <Profile />
     }
+
+    useEffect(() => {
+      if (user) {
+        const check = async () => {
+          const {data} = await axios.get(`/api/user?email=${user?.email}`)
+          // console.log(data)
+    
+          if (!data) {
+            const payload = {
+              email: user?.email,
+              name: user?.name,
+              profile_icon: 0
+            }
+            await axios.post(`/api/user`, payload)
+          }
+        }
+        check()
+      }
+    }, [user])
+    
+    
 
     return (
       <div>
