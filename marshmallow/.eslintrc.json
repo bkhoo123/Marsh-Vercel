@@ -4,6 +4,11 @@
     "react/no-unescaped-entities": "off",
     "jsx-a11y/anchor-is-valid": "off",
     "jsx-a11y/alt-text": "off",
-    "react-hooks/exhaustive-deps": "off"
+    "react-hooks/exhaustive-deps": "off",
+    "no-unused-vars": "off",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-key": "off",
+    "@next/next/no-html-link-for-pages": "off"
   }
 }
