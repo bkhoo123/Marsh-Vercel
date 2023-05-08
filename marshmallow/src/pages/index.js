@@ -6,11 +6,15 @@ import { useRouter } from 'next/router'
 const inter = Inter({ subsets: ['latin'] })
 import React, {useState} from 'react'
 import axios from 'axios'
-
+import { useUser } from '@auth0/nextjs-auth0/client';
 
 
 export default function Home() {
   const router = useRouter()
+  const {user, error, isLoading} = useUser()
+
+  if (user) router.push("/home")
+
   const [modal, setModal] = useState(false)
 
   const [form, setForm] = useState({
@@ -51,7 +55,7 @@ export default function Home() {
     <div className="min-h-screen overflow-y-auto flex justify-center items-center p-12 " style={{backgroundColor: "#4872B1"}}> 
       <main style={{backgroundColor:"#4872B1"}}>
 
-        <div onClick={() => router.push('/home')} className="absolute top-5 right-5 text-white text-2xl bg-orange-600 flex p-2 rounded-md drop-shadow-dark cursor-pointer hover:bg-stone-500">Login</div>
+        <div className="absolute top-5 right-5 text-white text-2xl bg-orange-600 flex p-2 rounded-md drop-shadow-dark cursor-pointer hover:bg-stone-500"><a href="/api/auth/login">Login</a></div>
 
         <div className="my-15 flex justify-items-center flex-col items-center">
           <div>

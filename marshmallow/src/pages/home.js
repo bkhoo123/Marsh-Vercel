@@ -26,6 +26,7 @@ export default function Home() {
             {selection[activeSelection]}
           </div>
 
+          <a className="absolute bottom-20 right-20 mb-5 bg-orange-600 p-3 rounded-md drop-shadow-dark text-white hover:bg-stone-400" href="/api/auth/logout">Logout</a>
           <button onClick={() => router.push("/")} className="absolute bottom-10 right-10 bg-orange-600 p-3 rounded-md drop-shadow-dark text-white hover:bg-stone-400">
               Return to Front Page
           </button>
