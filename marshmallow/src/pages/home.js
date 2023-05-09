@@ -30,7 +30,7 @@ export default function Home() {
             const { data } = await axios.get(`/api/user?email=${user?.email}`);
             console.log(data)
   
-            if (!data) {
+            if (!data.length) {
               const payload = {
                 email: user?.email,
                 name: user?.name,
