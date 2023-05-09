@@ -15,7 +15,7 @@ model User {
   name             String?
   email            String?  @unique
   username         String?  @unique
-  profile_icon     Int?     @default(0)
+  profile_icon     Int?     
   receivedRequests Friend[] @relation("ReceivedRequests")
   sentRequests     Friend[] @relation("SentRequests")
   player           Player?
