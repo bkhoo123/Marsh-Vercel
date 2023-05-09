@@ -14,6 +14,7 @@ export default function Home() {
     const { user, error, isLoading } = useUser();
     const router = useRouter()
     const [activeSelection, setActiveSelection] = useState("Play")
+    const [users, setUsers] = useState([])
 
     const selection = {
         "How to Play": <HowToPlay />,
@@ -28,7 +29,7 @@ export default function Home() {
         const checkAndCreateUser = async () => {
           try {
             const { data } = await axios.get(`/api/user?email=${user?.email}`);
-            console.log(data)
+            // console.log(data)
   
             if (!data.length) {
               const payload = {
@@ -45,6 +46,22 @@ export default function Home() {
         checkAndCreateUser();
       }
     }, [user]);
+
+    useEffect(() => {
+      const fetchUsers = async () => {
+        try {
+          const response = await axios.get('/api/AllUsers')
+          console.log(response, 'response')
+          setUsers(response.data)
+        } catch (error) {
+          console.error('Error fetching users:', error)
+        }
+      }
+  
+      fetchUsers()
+    }, [])
+
+    console.log(users)
     
     
 
