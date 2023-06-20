@@ -13,8 +13,8 @@ import {
 } from "../state/userSlice";
 
 export default function Profile() {
-  const dispatch = useDispatch();
-  const { email, name, icon } = useSelector((state) => state.user);
+  // const dispatch = useDispatch();
+  // const { email, name, icon } = useSelector((state) => state.user);
 
   const { user, error, isLoading } = useUser();
   const [profileIcon, setProfileIcon] = useState(0);
@@ -31,23 +31,23 @@ export default function Profile() {
   const handleProfile = async (e, index) => {
     e.preventDefault();
     await setProfileIcon(index);
-    await dispatch(changeProfileIcon(images[index]))
+    // await dispatch(changeProfileIcon(images[index]))
     setModal(!modal);
   };
 
-  useEffect(() => {
+  // useEffect(() => {
     
     
-    let payload = {
-      name: user.name,
-      email: user.email,
+  //   let payload = {
+  //     name: user.name,
+  //     email: user.email,
     
-    };
-    dispatch(getUserInfo(payload));
+  //   };
+  //   dispatch(getUserInfo(payload));
     
-  }, [user, profileIcon]); // eslint-disable-line react-hooks/exhaustive-deps
+  // }, [user, profileIcon]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  console.log( icon, 'icon');
+  // console.log( icon, 'icon');
 
   return (
     user && (
