@@ -45,7 +45,7 @@ export default function Profile() {
       };
       dispatch(getUserInfo(payload));
     }
-  }, [user, profileIcon]);
+  }, [user, profileIcon]); // eslint-disable-line react-hooks/exhaustive-deps
 
   console.log( icon, 'icon');
 
