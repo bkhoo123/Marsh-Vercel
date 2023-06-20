@@ -37,14 +37,14 @@ export default function Profile() {
 
   useEffect(() => {
     
-    if (user) {
-      let payload = {
-        name: user.name,
-        email: user.email,
-      
-      };
-      dispatch(getUserInfo(payload));
-    }
+    
+    let payload = {
+      name: user.name,
+      email: user.email,
+    
+    };
+    dispatch(getUserInfo(payload));
+    
   }, [user, profileIcon]); // eslint-disable-line react-hooks/exhaustive-deps
 
   console.log( icon, 'icon');
