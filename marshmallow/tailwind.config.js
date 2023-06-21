@@ -1,5 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  variants: {
+    extend: {
+      transform: ['hover', 'focus'],
+    }
+  },
   content: [
  
     // Or if using `src` directory:

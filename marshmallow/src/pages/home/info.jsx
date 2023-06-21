@@ -8,6 +8,9 @@ import StepFive from '<prefix>/components/HomeSteps/StepFive'
 import StepSix from '<prefix>/components/HomeSteps/StepSix'
 import StepSeven from '<prefix>/components/HomeSteps/StepSeven'
 import StepEight from '<prefix>/components/HomeSteps/StepEight'
+import StepNine from '<prefix>/components/HomeSteps/StepNine'
+import StepTen from '<prefix>/components/HomeSteps/StepTen'
+import StepEleven from '<prefix>/components/HomeSteps/StepEleven'
 
 const Info = () => {
   const router = useRouter()
@@ -22,6 +25,9 @@ const Info = () => {
     5: StepSix,
     6: StepSeven,
     7: StepEight,
+    8: StepNine,
+    9: StepTen,
+    10: StepEleven,
   }
 
   return (
@@ -29,7 +35,7 @@ const Info = () => {
       {steps[step]()}
       <div className="flex gap-4 mt-6" >
         <button className={step > 0 ? "mt-8 bg-orange-600 p-3 rounded-md drop-shadow-dark text-white hover:scale-105": "hidden"} onClick={() => setStep(step - 1)}>Back</button>
-        <button className={step === 6 ? "hidden" : "mt-8 bg-orange-600 p-3 rounded-md drop-shadow-dark text-white hover:scale-105"} onClick={() => setStep(step + 1)}>Next</button>
+        <button className={step === 10 ? "hidden" : "mt-8 bg-orange-600 p-3 rounded-md drop-shadow-dark text-white hover:scale-105"} onClick={() => setStep(step + 1)}>Next</button>
       </div>
       <div>
         <button 

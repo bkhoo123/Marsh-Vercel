@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import HowToPlay from "<prefix>/components/HowToPlay";
 import CardList from "<prefix>/components/CardList";
 import Lobby from "<prefix>/components/Lobby";
-import Friends from "<prefix>/components/Friends";
+import Friends from "<prefix>/components/Friends/Friends";
 import Profile from "<prefix>/components/Profile";
 import axios from "axios";
 import { useUser } from "@auth0/nextjs-auth0/client";
